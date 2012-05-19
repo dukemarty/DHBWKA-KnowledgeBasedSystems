@@ -12,7 +12,12 @@ FL::Perceptron *AndOp=NULL, *OrOp=NULL, *PrimArgOp=NULL;
 FL::Perceptron xorUpperLeft(2), xorLowerRight(2), xorOut(2);
 FL::Perceptron ex3Horiz(2), ex3Diag(2), ex3BlackCross(2), ex3GreenCircle(2), ex3BlueSquare(2);
 
-
+/*!
+	\brief Transform double value to boolean by thresholding with 0.
+	
+	@param value
+	@return
+*/
 bool thresholdWithNull(double value)
 {
   return (value > 0.0);
@@ -86,6 +91,11 @@ void initXorPerceptrons()
   xorOut.set_synaptic_weights(xoWeights);
 }
 
+/*!
+	\brief Initialize perceptrons for standard operations 'AND', 'OR' and selection of first argument.
+	
+	@param numberOfInputSignals number of input signals
+*/
 void initOperatorPerceptrons(int numberOfInputSignals)
 {
   AndOp = new FL::Perceptron(numberOfInputSignals);
@@ -140,6 +150,13 @@ void closeOperatorPerceptrons()
   PrimArgOp = NULL;
 }
 
+/*!
+	\brief Calculate 'and' operation with pre-configured perceptron.
+	
+	@param numberOfSignals number of input signals the perceptron accepts (and are given as second parameter)
+	@param signals array of input values for the perceptron
+	@return output value of the global <tt>AndOp</tt> perceptron
+*/
 double calculateAnd(int numberOfSignals, double* signals)
 {
   FL::Vector<double> inputSignal(numberOfSignals);
