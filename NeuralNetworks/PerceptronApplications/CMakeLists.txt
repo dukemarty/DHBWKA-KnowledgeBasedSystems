@@ -26,7 +26,6 @@ include_directories(
 
 set( PerceptronApplicationsHeaders
   )
-
 set( PerceptronApplicationsSources
   PerceptronApplications.cc
   )
@@ -34,7 +33,6 @@ set( PerceptronApplicationsSources
 set( PerceptronLearningHeaders
   PerceptronLearning.h
   )
-
 set( PerceptronLearningSources
   PerceptronLearning.cc
   )
@@ -42,7 +40,6 @@ set( PerceptronLearningSources
 set( PerceptronLearningFWHeaders
   PerceptronLearningFramework.h
   )
-
 set( PerceptronLearningFWSources
   PerceptronLearningFramework.cc
   )
@@ -50,7 +47,6 @@ set( PerceptronLearningFWSources
 set( PLClearHeaders
   PerceptronLearningFrameworkClear.h
   )
-
 set( PLClearSources
   PerceptronLearningFrameworkClear.cpp
   )
