@@ -1,7 +1,7 @@
 # -*- cmake -*-
 #
 # Last Author: Martin Loesch (<martin.loesch@@kit.edu>)
-# Date of last change: 29.11.11
+# Date of last change: 20.05.12
 #
 # Author: Martin Loesch (<loesch@@ira.uka.de>)
 # Date: 2011-02-22
@@ -44,13 +44,6 @@ set( PerceptronLearningFWSources
   PerceptronLearningFramework.cc
   )
 
-set( PLClearHeaders
-  PerceptronLearningFrameworkClear.h
-  )
-set( PLClearSources
-  PerceptronLearningFrameworkClear.cpp
-  )
-
 set( FloodFiles
   /Users/martinloesch/Source/external/Flood3/Flood/Perceptron/Perceptron.cpp
   )
@@ -58,7 +51,6 @@ set( FloodFiles
 add_executable( PerceptronApplications ${PerceptronApplicationsHeaders} ${PerceptronApplicationsSources} ${FloodFiles} )
 add_executable( PerceptronLearning ${PerceptronLearningHeaders} ${PerceptronLearningSources} ${FloodFiles} )
 add_executable( PerceptronLearningFramework ${PerceptronLearningFWHeaders} ${PerceptronLearningFWSources} ${FloodFiles} )
-add_executable( PLClear ${PLClearHeaders} ${PLClearSources} ${FloodFiles} )
 
 file( COPY andData.txt
   DESTINATION . )
