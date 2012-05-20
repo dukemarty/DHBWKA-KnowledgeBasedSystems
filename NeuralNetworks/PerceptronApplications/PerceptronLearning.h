@@ -6,7 +6,7 @@
     Please put your documentation for this file here.
 
     \par Last Author: Martin Loesch (<martin.loesch@@kit.edu>)
-    Date of last change: 23.03.11
+    Date of last change: 20.05.12
 
     \author   Martin Loesch (<loesch@@ira.uka.de>)
     \date     2011-03-23
@@ -88,7 +88,7 @@ void initRandomly(PerceptronConfig& config);
 	@param neuron perceptron that is to be configured
 	@param config configuration that is applied to the perceptron
 */
-void applyConfig(FL::Perceptron* neuron, PerceptronConfig& config)
+void applyConfig(FL::Perceptron* neuron, PerceptronConfig& config);
 
 /*!
 	\brief Check whether a perceptron performs correctly on a given data set.
