@@ -38,26 +38,36 @@ set( FloodSources
   /Users/martinloesch/Source/external/Flood3/Flood/Utilities/InputTargetDataSet.cpp
 )
 
-set( SimpleMlnnApplicationsHeaders
+set( XorMlnnApplicationHeaders
   XorMlnn.h
+  )
+set( XorMlnnApplicationSources
+  XorMlnn.cc
+  MlnnXorApplication.cc
+  )
+
+
+set( SimpleMlnnApplicationsHeaders
   )
 
 set( SimpleMlnnApplicationsSources
-  MlnnFromFileApplication.cpp
+  MlnnFromFileApplication.cc
   )
 
-set( Ex3MlnnApplicationsHeaders
-  Ex3Mlnn.h
-  )
+#set( Ex3MlnnApplicationsHeaders
+#  Ex3Mlnn.h
+#  )
 
-set( Ex3MlnnApplicationsSources
-  MlnnEx3Application.cpp
-  Ex3Mlnn.cpp
-  )
+#set( Ex3MlnnApplicationsSources
+#  MlnnEx3Application.cpp
+#  Ex3Mlnn.cpp
+#  )
+
+add_executable( XorMlnnApplication ${XorMlnnApplicationHeaders} ${XorMlnnApplicationSources} ${FloodSources} )
 
 add_executable( SimpleMlnnApplications ${SimpleMlnnApplicationsHeaders} ${SimpleMlnnApplicationsSources} ${FloodSources} )
 
-add_executable( Ex3MlnnApplications ${Ex3MlnnApplicationsHeaders} ${Ex3MlnnApplicationsSources} ${FloodSources} )
+#add_executable( Ex3MlnnApplications ${Ex3MlnnApplicationsHeaders} ${Ex3MlnnApplicationsSources} ${FloodSources} )
 
 #add_dependencies( PerceptronApplications
 #
