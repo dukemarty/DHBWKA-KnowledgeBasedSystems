@@ -55,20 +55,21 @@ set( SimpleMlnnApplicationsSources
   MlnnFromFileApplication.cc
   )
 
-#set( Ex3MlnnApplicationsHeaders
-#  Ex3Mlnn.h
-#  )
+set( Ex3MlnnApplicationsHeaders
+  Ex3Mlnn.h
+  MlnnEx3Application.h
+  )
 
-#set( Ex3MlnnApplicationsSources
-#  MlnnEx3Application.cpp
-#  Ex3Mlnn.cpp
-#  )
+set( Ex3MlnnApplicationsSources
+  Ex3Mlnn.cc
+  MlnnEx3Application.cc
+  )
 
 add_executable( XorMlnnApplication ${XorMlnnApplicationHeaders} ${XorMlnnApplicationSources} ${FloodSources} )
 
 add_executable( SimpleMlnnApplications ${SimpleMlnnApplicationsHeaders} ${SimpleMlnnApplicationsSources} ${FloodSources} )
 
-#add_executable( Ex3MlnnApplications ${Ex3MlnnApplicationsHeaders} ${Ex3MlnnApplicationsSources} ${FloodSources} )
+add_executable( Ex3MlnnApplications ${Ex3MlnnApplicationsHeaders} ${Ex3MlnnApplicationsSources} ${FloodSources} )
 
 #add_dependencies( PerceptronApplications
 #
