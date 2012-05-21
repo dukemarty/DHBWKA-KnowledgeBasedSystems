@@ -1,0 +1,22 @@
+# naive bayes classifier data set
+# 1st line: types of attributes
+# 2nd line: names of attributes
+# 3rd line: number of values/attribute
+# 4th line - end: instances
+b, d, d, d, d
+Tennis, Vorhersage, Temperatur, Luftfeuchtigkeit, Wind
+2, 3, 3, 2, 2
+nein, sonnig, heiss, hoch, schwach
+nein, sonnig, heiss, hoch, stark
+ja, bedeckt, heiss, hoch, schwach
+ja, regnerisch, warm, hoch, schwach
+ja, regnerisch, kalt, normal, schwach
+nein, regnerisch, kalt, normal, stark
+ja, bedeckt, kalt, normal, stark
+nein, sonnig, warm, hoch, schwach
+ja, sonnig, kalt, normal, schwach
+ja, regnerisch, warm, normal, schwach
+ja, sonnig, warm, normal, stark
+ja, bedeckt, warm, hoch, stark
+ja, bedeckt, heiss, normal, schwach
+nein, regnerisch, warm, hoch, stark

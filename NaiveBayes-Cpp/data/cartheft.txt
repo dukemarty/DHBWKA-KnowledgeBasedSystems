@@ -1,0 +1,18 @@
+# naive bayes classifier data set
+# 1st line: types of attributes
+# 2nd line: names of attributes
+# 3rd line: number of values/attribute
+# 4th line - end: instances
+b, b, b, b
+Stolen?, Color=Red?, Type=SUV?, Origin=Domestic?
+2, 2, 2, 2
+ja, ja, nein, ja
+nein, ja, nein, ja
+ja, ja, nein, ja
+nein, nein, nein, ja
+ja, nein, nein, nein
+nein, nein, ja, nein
+ja, nein, ja, nein
+nein, nein, ja, ja
+nein, ja, ja, nein
+ja, ja, nein, nein
