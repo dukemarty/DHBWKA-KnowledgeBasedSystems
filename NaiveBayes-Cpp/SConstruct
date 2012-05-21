@@ -1,0 +1,72 @@
+# -*- python -*- coding: latin1
+#
+# Last Author: Martin Loesch (<martin.loesch@@kit.edu>)
+# Date of last change: 13.04.11
+#
+# Author: Martin Loesch (loesch@@ira.uka.de)
+# Date: 2010-04-08
+# Copyright:
+#              Martin Loesch, Chair Prof. Dillmann (IAIM)\n
+#              Institute for Computer Science and Engineering (CSE)\n
+#	       University of Karlsruhe. All rights reserved\n
+#	       http://wwwiaim.ira.uka.de
+#
+
+import os, glob
+
+env = Environment(ENV = os.environ)
+docbuilder = Builder(action = 'doxygen')
+env.Append(BUILDERS = {'DoxygenDoc' : docbuilder})
+
+bgtoolspath = '/org/opt/bgtools'
+
+project_cc_flags = '-Wall -Wno-non-virtual-dtor -Wno-reorder -fno-common'
+project_ld_flags = ''
+
+system_libraries = ['gcc', 'System', 'stdc++', 'SystemStubs']
+
+
+
+external_libraries = []
+project_libraries = []
+
+
+subproject_scripts = []
+subproject_paths = []
+
+program_input_files = glob.glob('*.cc')
+
+
+external_include_paths = ['/opt/local/include']
+project_include_paths = ['.'] + subproject_paths
+
+
+external_library_paths = ['/opt/local/lib']
+project_library_paths = ['.'] + subproject_paths
+
+
+
+include_paths = external_include_paths + project_include_paths
+library_paths = external_library_paths + project_library_paths
+libraries_program =  system_libraries + external_libraries + project_libraries
+
+
+SConscript(subproject_scripts, exports={'BGTOOLS' : bgtoolspath,
+                                        'MYCCFLAGS' : project_cc_flags,
+                                        'MYLDFLAGS' : project_ld_flags,
+                                        'MYLIBS' : system_libraries})
+
+
+naivebayeslibrary = Program('NaiveBayesLibrary', program_input_files,
+                            CPPPATH = include_paths,
+                            LIBPATH = library_paths,
+                            LIBS = libraries_program,
+                            CCFLAGS = project_cc_flags,
+                            LINKFLAGS = project_ld_flags)
+
+
+env.DoxygenDoc('docu', 'Doxyfile')
+
+Clean(naivebayeslibrary, glob.glob('*~'))
+
+Default(naivebayeslibrary)
