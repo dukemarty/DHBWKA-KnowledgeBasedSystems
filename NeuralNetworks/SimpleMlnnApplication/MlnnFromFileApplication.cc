@@ -99,7 +99,6 @@ int main(int argc, char* argv[])
   // initialize neural network
   FL::Vector<int> hiddenL(1);
   hiddenL[0] = 8;
-//   hiddenL[1] = 7;
   FL::MultilayerPerceptron net(2, hiddenL, 1);
 
   // initialize training data

@@ -48,6 +48,7 @@ set( XorMlnnApplicationSources
 
 
 set( SimpleMlnnApplicationsHeaders
+  MlnnFromFileApplication.h
   )
 
 set( SimpleMlnnApplicationsSources
